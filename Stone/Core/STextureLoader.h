@@ -5,6 +5,7 @@
 #include "STexture.h"
 #include "SSingleton.h"
 #include "SGeometry.h"
+#include <SDL_image.h>
 #include <map>
 
 class STextureLoader : public SSingleton<STextureLoader>

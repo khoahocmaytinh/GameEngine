@@ -1,5 +1,6 @@
 #include "SSprite.h"
 #include "../Core/STextureLoader.h"
+#include "../Core/SRenderer.h"
 
 bool SSprite::init(std::string path, SRect rect)
 {
@@ -40,7 +41,7 @@ void SSprite::update()
 
 void SSprite::render()
 {
-
+	SRENDERER->render(this->m_texture, this->m_position);
 }
 
 void SSprite::clean()

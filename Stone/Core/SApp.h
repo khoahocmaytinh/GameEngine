@@ -2,8 +2,11 @@
 #define __APP_H__
 
 #include <iostream>
+#include <vector>
 #include "SDL.h"
 #include "SSingleton.h"
+
+#include "SNode.h"
 
 class SApp : public SSingleton<SApp>
 {
@@ -21,8 +24,9 @@ private:
 	void clean();
 
 	bool m_bRunning;
-
 	SDL_Window* m_pWindow;
+
+	std::vector<SNode*> m_gameObjects;
 };
 
 #define SAPP SApp::getInstance()

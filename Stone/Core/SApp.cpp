@@ -2,8 +2,12 @@
 #include "SRenderer.h"
 #include "SInput.h"
 
+#include "../Graphics/SSprite.h"
+#include "SDL_image.h"
+
 bool SApp::init(std::string title, int x, int y, int width, int heigt, Uint32 flags)
 {
+
 	if (SDL_Init(SDL_INIT_EVERYTHING) >= 0)
 	{
 		this->m_pWindow = SDL_CreateWindow(title.c_str(), x, y, width, heigt, flags);
@@ -22,6 +26,9 @@ bool SApp::init(std::string title, int x, int y, int width, int heigt, Uint32 fl
 		return false;
 	}
 
+	auto sprite = SSprite::create("../../Data/sprite/spr_data.png", SRect(20, 20, 280, 100));
+	m_gameObjects.push_back(sprite);
+
 	return true;
 }
 
@@ -38,14 +45,22 @@ void SApp::run()
 void SApp::update()
 {
 	SINPUT->update();
-
-	//inputhandle ...
+	///////////////////////////////
+	for (int i = 0; i < m_gameObjects.size(); i++)
+	{
+		m_gameObjects[i]->update();
+	}
 }
 
 void SApp::render()
 {
 	SDL_RenderClear(SRENDERER->m_pRenderer);
 	///////////////////////////////////////
+
+	for (int i = 0; i < m_gameObjects.size(); i++)
+	{
+		m_gameObjects[i]->render();
+	}
 
 	///////////////////////////////////////
 	SDL_RenderPresent(SRENDERER->m_pRenderer);

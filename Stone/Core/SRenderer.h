@@ -4,15 +4,21 @@
 #include "SDL.h"
 #include "SSingleton.h"
 #include "STexture.h"
+#include "SVec2.h"
+#include "SApp.h"
 
 class SRenderer : public SSingleton<SRenderer>
 {
 	friend class SSingleton<SRenderer>;
 	friend class SApp;
+	friend class STextureLoader;
 public:
-	void render()
+	void render(STexture* texture, SVec2 position);
 private:
-	SRenderer(){}
+	SRenderer()
+	{
+		m_pRenderer = SDL_CreateRenderer(SAPP->m_pWindow, -1, SDL_RENDERER_ACCELERATED);
+	}
 	~SRenderer(){}
 
 	SDL_Renderer* m_pRenderer;
