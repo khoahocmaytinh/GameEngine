@@ -80,6 +80,21 @@ public:
 public:
 	float m_x;
 	float m_y;
+
+public:
+	static const SVec2 ZERO;
+	static const SVec2 ONE;
+	static const SVec2 UNIT_X;
+	static const SVec2 UNIT_Y;
+	static const SVec2 ANCHOR_MIDDLE;
+	static const SVec2 ANCHOR_BOTTOM_LEFT;
+	static const SVec2 ANCHOR_TOP_LEFT;
+	static const SVec2 ANCHOR_BOTTOM_RIGHT;
+	static const SVec2 ANCHOR_TOP_RIGHT;
+	static const SVec2 ANCHOR_MIDDLE_RIGHT;
+	static const SVec2 ANCHOR_MIDDLE_LEFT;
+	static const SVec2 ANCHOR_MIDDLE_TOP;
+	static const SVec2 ANCHOR_MIDDLE_BOTTOM;
 };
 
 #endif //!__VEC2_H__

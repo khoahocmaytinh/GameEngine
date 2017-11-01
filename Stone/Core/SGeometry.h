@@ -11,6 +11,12 @@ struct SRect
 	{
 		x = _x; y = _y; w = _w; h = _h;
 	}
+
+	bool operator==(const SRect& rect)
+	{
+		return (this->x == rect.x && this->x == rect.y && this->w == rect.w && this->h == rect.h);
+	}
+
 	float x;
 	float y;
 	float w;

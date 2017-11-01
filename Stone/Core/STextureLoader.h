@@ -15,10 +15,18 @@ public:
 	STexture* load(std::string path);
 	STexture* load(std::string path, SRect rect);
 private:
-	STextureLoader(){}
+	std::string getFileName(std::string path);
+
+	STextureLoader()
+	{
+		m_count = 0;
+	}
 	~STextureLoader(){}
 
-	std::map<std::string,STexture*> m_textureCache;
+	//std::map<std::string, std::pair<SRect, STexture*>> m_textureCache;
+	std::map<std::string, STexture*> m_textureCache;
+
+	int m_count;
 };
 
 #define STEXTURELOADER STextureLoader::getInstance()

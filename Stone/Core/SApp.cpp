@@ -7,7 +7,6 @@
 
 bool SApp::init(std::string title, int x, int y, int width, int heigt, Uint32 flags)
 {
-
 	if (SDL_Init(SDL_INIT_EVERYTHING) >= 0)
 	{
 		this->m_pWindow = SDL_CreateWindow(title.c_str(), x, y, width, heigt, flags);
@@ -26,8 +25,18 @@ bool SApp::init(std::string title, int x, int y, int width, int heigt, Uint32 fl
 		return false;
 	}
 
-	auto sprite = SSprite::create("../../Data/sprite/spr_data.png", SRect(20, 20, 280, 100));
+	
+	auto sprite = SSprite::create("../../Data/sprite/sin.png");
+	sprite->setAnchorPoint(SVec2::ANCHOR_MIDDLE);
+	sprite->setPosition(SVec2(400, 400));
+	//sprite->setRotate(45, SFLIP_NONE);
+
+	auto plank = SSprite::create("../../Data/sprite/sin.png");
+	plank->setAnchorPoint(SVec2::ANCHOR_MIDDLE);
+	plank->setPosition(SVec2(200, 200));
+	
 	m_gameObjects.push_back(sprite);
+	m_gameObjects.push_back(plank);
 
 	return true;
 }

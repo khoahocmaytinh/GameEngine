@@ -14,6 +14,11 @@ class SRenderer : public SSingleton<SRenderer>
 	friend class STextureLoader;
 public:
 	void render(STexture* texture, SVec2 position);
+	/*
+		angle: tinh bang degree, xoay theo chieu kim dong ho
+		center: anchor point
+	*/
+	void render(STexture* texture, SVec2 position, double angle, SVec2 center, SRendererFlip flip);
 private:
 	SRenderer()
 	{

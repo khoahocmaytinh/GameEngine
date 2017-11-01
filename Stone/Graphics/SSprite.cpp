@@ -36,12 +36,12 @@ SSprite* SSprite::create(std::string path, SRect rect)
 
 void SSprite::update()
 {
-
+	m_angle++;
 }
 
 void SSprite::render()
 {
-	SRENDERER->render(this->m_texture, this->m_position);
+	SNode::render();
 }
 
 void SSprite::clean()
