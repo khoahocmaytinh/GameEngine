@@ -23,4 +23,15 @@ struct SRect
 	float h;
 };
 
+struct SSize
+{
+	SSize()
+	{
+		width = height = 0;
+	}
+
+	int width;
+	int height;
+};
+
 #endif // !__GEOMETRY_H__

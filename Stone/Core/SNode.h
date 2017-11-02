@@ -29,12 +29,13 @@ public:
 		angle = degree
 	*/
 	void setRotate(double angle, SRendererFlip flip);
-	void setPosition(const SVec2& position);
-	void setAnchorPoint(const SVec2& anchor);
+	virtual void setPosition(const SVec2& position);
+	virtual void setAnchorPoint(const SVec2& anchor);
 
 	SVec2 getPosition() { return m_position; }
 	STexture* getTexture() { return m_texture; }
 	SVec2 getAnchorPoint() { return m_anchorPoint; }
+	SVec2 getDrawPosition() { return m_drawPosition; }
 
 protected:
 	STexture* m_texture;
@@ -51,9 +52,10 @@ protected:
 	*/
 
 	SVec2 m_anchorPoint; // default (0, 0)
+	SVec2 m_drawPosition;
+public:
 	double m_angle; // default 0.00000f
 	SRendererFlip m_flip; // default none
-	SVec2 m_drawPosition;
 };
 
 #endif // !__NODE_H__

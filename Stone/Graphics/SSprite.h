@@ -10,13 +10,13 @@ class SSprite : public SNode
 public:
 
 	virtual void update();
-	virtual void render();
+	//virtual void render();
 	virtual void clean();
 
 	static SSprite* create(std::string path);
 	static SSprite* create(std::string path, SRect rect);
 
-private:
+protected:
 
 	bool init(std::string path);
 	bool init(std::string path, SRect rect);

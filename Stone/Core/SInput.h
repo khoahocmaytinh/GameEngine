@@ -8,23 +8,24 @@
 
 enum SButton_State
 {
-	LEFT = 0,
-	MIDDLE = 1, 
-	RIGHT = 2
+	SBUTTON_LEFT = 0,
+	SBUTTON_MIDDLE = 1, 
+	SBUTTON_RIGHT = 2
 };
 
 class SInput : public SSingleton<SInput>
 {
 	friend class SSingleton<SInput>;
-
 public:
 	void update();
+	bool getMouseButtonState(int buttonNumber);
+	SVec2 getMousePosition();
+	bool isKeyDown(SDL_Scancode key);
 private:
 	SInput()
 	{
 		for (int i = 0; i < 3; i++)
 			m_mouseButtonStates.push_back(false);
-		m_mousePosition = new SVec2(0, 0);
 	}
 	~SInput(){}
 	void onKeyDown();
@@ -34,7 +35,7 @@ private:
 	void onMouseMove(SDL_Event& event);
 
 	std::vector<bool> m_mouseButtonStates;
-	SVec2* m_mousePosition;
+	SVec2 m_mousePosition;
 	const uint8_t* m_keystates;
 };
 

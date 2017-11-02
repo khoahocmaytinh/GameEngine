@@ -6,6 +6,7 @@
 #include "STexture.h"
 #include "SVec2.h"
 #include "SApp.h"
+#include "SNode.h"
 
 class SRenderer : public SSingleton<SRenderer>
 {
