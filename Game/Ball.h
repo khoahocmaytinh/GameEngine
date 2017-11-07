@@ -8,6 +8,7 @@
 
 class Ball : public SSprite
 {
+	friend class GamePlayScene;
 public:
 	virtual void update();
 	//virtual void render();
@@ -15,7 +16,10 @@ public:
 	CREATE_FUNC(Ball);
 private:
 	bool init();
+	b2Vec2 m_linearVelocity;
 
+	b2Body* m_body;
+	float m_radius;
 };
 
 #endif // !__BALL_H__

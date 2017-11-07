@@ -1,4 +1,5 @@
 #include "Enemy.h"
+#include "../Stone/Core/SApp.h"
 
 bool Enemy::init()
 {
@@ -7,9 +8,9 @@ bool Enemy::init()
 		return false;
 	}
 
-	this->setPosition(SVec2(400, 200));
+	SSize windowSize = SAPP->getSize();
+	this->setPosition(SVec2(windowSize.width - this->m_texture->m_width / 2, windowSize.height / 2));
 	this->setAnchorPoint(SVec2::ANCHOR_MIDDLE);
-	this->setRotate(90, SFLIP_NONE);
 
 	return true;
 }

@@ -22,7 +22,7 @@ bool SApp::init(std::string title, int x, int y, int width, int heigt, Uint32 fl
 			this->m_size.height = heigt;
 
 			// --------------YOU CAN CHANGE BACKGROUNG GAME HERE--------------------
-			setBackgroundColor(255, 255, 255, 0);
+			setBackgroundColor(0, 0, 0, 0);
 			//----------------------------------------------------------------------
 
 		}

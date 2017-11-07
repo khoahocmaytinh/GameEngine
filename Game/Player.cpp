@@ -1,4 +1,5 @@
 #include "Player.h"
+#include "../Stone/Core/SApp.h"
 
 bool Player::init()
 {
@@ -7,9 +8,11 @@ bool Player::init()
 		return false;
 	}
 
-	this->setPosition(SVec2(400, 400));
+	SSize windowSize = SAPP->getSize();
+	
+	this->setPosition(SVec2(this->m_texture->m_width / 2, windowSize.height / 2));
 	this->setAnchorPoint(SVec2::ANCHOR_MIDDLE);
-	this->setRotate(90, SFLIP_NONE);
+	//this->setRotate(90, SFLIP_NONE);
 
 	return true;
 }

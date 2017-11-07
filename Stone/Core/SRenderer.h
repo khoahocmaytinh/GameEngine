@@ -20,6 +20,7 @@ public:
 		center: anchor point
 	*/
 	void render(STexture* texture, SVec2 position, double angle, SVec2 center, SRendererFlip flip);
+
 private:
 	SRenderer()
 	{

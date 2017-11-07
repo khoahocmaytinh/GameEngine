@@ -3,9 +3,11 @@
 
 #include "../Stone/Graphics/SSprite.h"
 #include "../Stone/Core/SPlatformMacro.h"
+#include "Box2D.h"
 
 class Enemy : public SSprite
 {
+	friend class GamePlayScene;
 public:
 	virtual void update();
 	//virtual void render();
@@ -15,6 +17,8 @@ public:
 
 private:
 	bool init();
+
+	b2Body* m_body;
 };
 
 #endif // !__ENEMY_H__

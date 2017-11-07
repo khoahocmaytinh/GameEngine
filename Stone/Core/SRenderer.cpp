@@ -38,6 +38,6 @@ void SRenderer::render(STexture* texture, SVec2 position, double angle, SVec2 ce
 	pointCenter.x = center.m_x * texture->m_width;
 	pointCenter.y = center.m_y * texture->m_height;
 
-	SDL_RenderCopyEx(SRENDERER->m_pRenderer, texture->m_pTexture, &src, &des, angle, 
+	SDL_RenderCopyEx(this->m_pRenderer, texture->m_pTexture, &src, &des, angle, 
 		&pointCenter, (SDL_RendererFlip)flip);
 }
