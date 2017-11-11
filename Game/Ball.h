@@ -17,7 +17,7 @@ public:
 private:
 	bool init();
 	b2Vec2 m_linearVelocity;
-
+	b2BodyDef m_ballBodyDef;
 	b2Body* m_body;
 	float m_radius;
 };

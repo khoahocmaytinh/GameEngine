@@ -23,6 +23,8 @@ private:
 	void playToMenu();
 	void playToExit();
 
+	Ball* m_ball;
+
 	b2World* m_world;
 	b2Body* m_topWall;
 	b2Body* m_botWall;
